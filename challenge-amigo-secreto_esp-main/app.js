@@ -43,12 +43,8 @@ function sortearAmigo() {
     li.textContent = `¡El Amigo Secreto es: ${amigoSecreto}!`;
     resultado.appendChild(li);}
 
-function reiniciarJuego() {
-    nombres = []; // limpiar todo para iniciar nuevamente
-    document.getElementById('amigo').value = ''; //borrar nuestro campo de entrada
-    document.getElementById('listaAmigos').innerHTML = ''; // borrar nuestra lista de nombes visibles
-    document.getElementById('resultado').innerHTML = ''; // borrar el resultado borrado
-}
+
 
     
    
+
