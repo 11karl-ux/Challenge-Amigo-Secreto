@@ -35,22 +35,13 @@ function sortearAmigo() {
         alert('Necesitas al menos dos nombres para sortear un amigo secreto.');
         return;
     }
+ const indiceAleatorio = Math.floor(Math.random()* nombres.length);
+    const amigoSecreto = nombres [indiceAleatorio];
+    //Mostrar solo un nombre ganador
 
-    // los siguientes pasos nos ayudaran a elegir un nombre de manera aleatoria
-    for (let i = nombres.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [nombres[i], nombres[j]] = [nombres[j], nombres[i]]; // Swap elements
-    }
-
-    //nos mostrara el nombre elegido como nuestro amigo secreto
-    for (let i = 0; i < nombres.length; i++) {
-        let li = document.createElement('li');
-        let dador = nombres[i];
-        let receptor = nombres[(i + 1) % nombres.length]; // la siguiente persona en la lista mezclada
-        li.textContent = `${dador} --> Tu amigo secreto es ${receptor}`;
-        resultado.appendChild(li);
-    }
-}
+    let li = document.createElement('li');
+    li.textContent = `¡El Amigo Secreto es: ${amigoSecreto}!`;
+    resultado.appendChild(li);}
 
 function reiniciarJuego() {
     nombres = []; // limpiar todo para iniciar nuevamente
@@ -58,3 +49,6 @@ function reiniciarJuego() {
     document.getElementById('listaAmigos').innerHTML = ''; // borrar nuestra lista de nombes visibles
     document.getElementById('resultado').innerHTML = ''; // borrar el resultado borrado
 }
+
+    
+   
